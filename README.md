@@ -14,5 +14,5 @@ In addition to the ability to record production, the software also needs the abi
 
 **Diagrams**
 
-
-
+![DatabaseDiagram](https://user-images.githubusercontent.com/36053356/65823020-58e6e780-e21c-11e9-90e2-12fde1a3d333.PNG)
+![Java Class Diagram](https://user-images.githubusercontent.com/36053356/65823026-6bf9b780-e21c-11e9-9ad5-58bfabe7ef67.PNG)
