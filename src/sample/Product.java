@@ -2,31 +2,33 @@ package sample;
 
 public abstract class Product implements Item {
 
-    private int Id;
-    private String Type;
-    private String Manufacturer;
-    private String Name;
+
+    private static String Type;
+    private static String Manufacturer;
+    private static String Name;
 
 
 
     Product(String name, String manufacturer, String type) {
-        this.Name = name;
-        this.Manufacturer = manufacturer;
-        this.Type = type;
+        Name = name;
+        Manufacturer = manufacturer;
+        Type = type;
     }
-
-
 
     public String toString() {
         return "Name: " + Name + "\n" + "Manufacturer: " + Manufacturer + "\n" + "Type: "
                 + Type;
     }
 
-    public int getId() {
-        return Id;
+    public static String getType() {
+        return Type;
     }
 
-    public String getManufacturer() {
+    public static void setType(String type) {
+        Type = type;
+    }
+
+    static String getManufacturer() {
         return Manufacturer;
     }
 
@@ -43,3 +45,9 @@ public abstract class Product implements Item {
     }
 }
 
+class Widget extends Product {
+
+    Widget(String name, String manufacturer, String type) {
+        super(name, manufacturer, type);
+    }
+}

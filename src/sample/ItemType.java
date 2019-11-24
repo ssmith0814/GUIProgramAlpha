@@ -2,10 +2,13 @@ package sample;
 
 public enum ItemType {
 
-    AUDIO("AU"), VISUAL("VI"), AUDIO_MOBILE("AM"), VISUAL_MOBILE("VM");
+    AUDIO("AU"),VISUAL("VI"),AUDIO_MOBILE("AM"),VISUAL_MOBILE("VM");
 
-    private String code;
+
+    String code;
+
     ItemType(String c){
         code = c;
     }
+
 }
