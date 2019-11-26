@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Displays the Production Record and formats the serial number
+ ***************************************************/
+
 package sample;
 
 import java.util.Date;

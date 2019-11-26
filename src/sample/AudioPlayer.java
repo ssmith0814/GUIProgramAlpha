@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Widget for AudioPlayers
+ ***************************************************/
+
 package sample;
 
 public class AudioPlayer extends Product implements MultimediaControl {

@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Implemented by AudioPlayer and MoviePlayer
+ ***************************************************/
+
 package sample;
 
 public interface MultimediaControl {

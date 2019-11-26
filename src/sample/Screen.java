@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Called by MoviePlayer to provide screen info
+ ***************************************************/
+
 package sample;
 
 public class Screen {

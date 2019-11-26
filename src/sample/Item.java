@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: gets implemented by Product class
+ ***************************************************/
+
 package sample;
 
 public interface Item {

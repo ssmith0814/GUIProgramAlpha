@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Widget for MoviePlayers
+ ***************************************************/
+
 package sample;
 
 public class MoviePlayer extends Product implements MultimediaControl {

@@ -1,9 +1,10 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Makes the GUI have functionality
+ ***************************************************/
+
 package sample;
 //imports
-
-/*
-@Author Shane Smith
- */
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -123,7 +124,6 @@ public class Controller implements Initializable {
         try {
             Connection conn = DriverManager.getConnection(DB_URL);
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
@@ -138,7 +138,6 @@ public class Controller implements Initializable {
         } catch (SQLException | IllegalArgumentException e) {
             e.printStackTrace();
         }
-
     }
 
     //Giving the record productions button an output
@@ -162,6 +161,7 @@ public class Controller implements Initializable {
     private void showProduction() {
         ProductionLogTextArea.appendText(prodLog + "\n");
     }
+
     //adding production record info into database
     private void addToProductionDB(ProductionRecord productionRecord) {
         int id = productionRecord.getProductID();

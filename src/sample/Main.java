@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Main class that runs the program and sets the stage
+ ***************************************************/
+
 package sample;
 //imports
 
@@ -10,10 +15,6 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-
-/**
- * @author Shane Smith
- */
 
 public class Main extends Application {
 

@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Adds the different ItemTypes of products
+ ***************************************************/
+
 package sample;
 
 public enum ItemType {

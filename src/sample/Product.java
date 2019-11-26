@@ -1,3 +1,8 @@
+/***************************************************
+ * @Author: Shane Smith
+ * @Description: Gives template for product and Widget to display the product
+ ***************************************************/
+
 package sample;
 
 public abstract class Product implements Item {
