@@ -1,6 +1,10 @@
 package sample;
 //imports
 
+/*
+@Author Shane Smith
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,12 +18,12 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
+//database connectivity
     private static final String JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URL = "jdbc:h2:./res/databas";
     public Button AddProductButton;
     public Button RecordProductionsBtn;
-
+//adding all the FXid's for GUI
     @FXML
     private ChoiceBox<ItemType> ItemTypeChoiceBox;
 
@@ -29,10 +33,11 @@ public class Controller implements Initializable {
     @FXML
     private TextField ManufacturerText;
 
-    private ObservableList<String> chooseQuantity = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+    @FXML
+    private ComboBox<String> QuantityComboBox;
 
-    @FXML // fx:id="QuantityComboBox"
-    private ComboBox<String> QuantityComboBox; // Value injected by FXMLLoader
+    //options for comboBox in the record productions tab
+    private ObservableList<String> chooseQuantity = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
     @FXML
     private TextArea ProductionLogTextArea;
@@ -52,8 +57,10 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<Product, String> ItemTypeColumn;
 
+    //list of products that get added to the listView and tableView in the products and record production tabs
     private ObservableList<Product> productLine = FXCollections.observableArrayList();
 
+    //list of production log that gets put into the production log tab's Text area
     private ObservableList<ProductionRecord> prodLog;
 
     @Override
@@ -65,14 +72,16 @@ public class Controller implements Initializable {
         //making the default selection be the first option
         QuantityComboBox.getSelectionModel().selectFirst();
         ItemTypeChoiceBox.getItems().addAll(ItemType.values());
-        //testMultimedia();
 
+        //sets up the tableView for products tab
         setupProductionLineTable();
+        //populates the listView with the products
         ProduceListView.setItems(productLine);
+        //calls the method that populates the tableView with the products
         loadProductList();
-        //loadProductionLog();
     }
 
+    //Giving the add production button functionality
     @FXML
     void AddProductBtn(ActionEvent event) {
         AddProduct();
@@ -80,7 +89,7 @@ public class Controller implements Initializable {
         loadProductList();
     }
 
-    //Giving the add production button an output
+    //puts the text/values from the input and uploads them into the database as a Product
     @FXML
     private void AddProduct() {
         String name = ProductNameText.getText();
@@ -107,6 +116,7 @@ public class Controller implements Initializable {
         loadProductList();
     }
 
+    //populates tableView and listView with the list of products
     @FXML
     private void loadProductList() {
         String sql = "SELECT NAME, MANUFACTURER, TYPE FROM PRODUCT";
@@ -130,16 +140,13 @@ public class Controller implements Initializable {
         }
 
     }
-    //Giving the record productions button an output
 
+    //Giving the record productions button an output
     @FXML
     void RecordProductionsBtnPressed(ActionEvent event) {
 
         Product selectedProd = ProduceListView.getSelectionModel().getSelectedItem();
         ObservableList<ProductionRecord> productionRun = FXCollections.observableArrayList();
-
-        //addToProductionDB();
-
 
         int count = Integer.parseInt(String.valueOf(QuantityComboBox.getValue()));
 
@@ -151,10 +158,11 @@ public class Controller implements Initializable {
         }
     }
 
+    //populates Production Log with production record
     private void showProduction() {
         ProductionLogTextArea.appendText(prodLog + "\n");
     }
-
+    //adding production record info into database
     private void addToProductionDB(ProductionRecord productionRecord) {
         int id = productionRecord.getProductID();
         String serialNum = productionRecord.getSerialNumber();
@@ -175,6 +183,7 @@ public class Controller implements Initializable {
         }
     }
 
+    //prep's the production record info for the textArea in the production log tab
     private void loadProductionLog() {
         int prodNum;
         int prodID;
@@ -203,33 +212,13 @@ public class Controller implements Initializable {
         showProduction();
     }
 
+    //sets up columns in the tableView in the product tab
     private void setupProductionLineTable() {
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         ManufacturerColumn.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
         ItemTypeColumn.setCellValueFactory(new PropertyValueFactory<>("Type"));
         ProductLineTableView.setItems(productLine);
     }
-
-
-//    public static void testMultimedia() {
-//        AudioPlayer newAudioProduct = new AudioPlayer("DP-X1A", "Onkyo",
-//                "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
-//        Screen newScreen = new Screen("720x480", 40, 22);
-//        MoviePlayer newMovieProduct = new MoviePlayer("DBPOWER MK101", "OracleProduction", newScreen,
-//                MonitorType.LCD);
-//        ArrayList<MultimediaControl> productList = new ArrayList<MultimediaControl>();
-//        productList.add(newAudioProduct);
-//        productList.add(newMovieProduct);
-//        for (MultimediaControl p : productList) {
-//            System.out.println(p);
-//            p.play();
-//            p.stop();
-//            p.next();
-//            p.previous();
-//        }
-//    }
-
-
 }
 
 
