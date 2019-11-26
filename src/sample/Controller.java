@@ -19,12 +19,12 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-//database connectivity
+    //database connectivity
     private static final String JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URL = "jdbc:h2:./res/databas";
     public Button AddProductButton;
     public Button RecordProductionsBtn;
-//adding all the FXid's for GUI
+    //adding all the FXid's for GUI
     @FXML
     private ChoiceBox<ItemType> ItemTypeChoiceBox;
 
