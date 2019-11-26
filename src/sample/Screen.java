@@ -6,13 +6,13 @@ public class Screen {
     private int refreshrate;
     private int responsetime;
 
-    Screen (String resolution, int refreshrate, int responsetime){
+    Screen(String resolution, int refreshrate, int responsetime) {
         this.resolution = resolution;
         this.refreshrate = refreshrate;
-        this. responsetime = responsetime;
+        this.responsetime = responsetime;
     }
 
-    public String toString(){
+    public String toString() {
         return "Screen:" + "\n" + "Resolution: " + resolution + "\n" + "Refresh rate: " + refreshrate + "\n" + "Response time: " + responsetime;
     }
 

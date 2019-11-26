@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -24,6 +25,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
+
     //Connects to database
     public static void ping(String sql) {
         System.out.println(sql);
@@ -42,6 +44,7 @@ public class Main extends Application {
             ex.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         launch(args);
     }

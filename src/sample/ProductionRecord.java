@@ -9,7 +9,7 @@ public class ProductionRecord {
     private Date dateProduced;
     private String firstThree;
 
-    ProductionRecord(int productionNumber, int productID, String serialNumber, Date dateProduced){
+    ProductionRecord(int productionNumber, int productID, String serialNumber, Date dateProduced) {
         this.productionNumber = productionNumber;
         this.productID = productID;
         this.serialNumber = serialNumber;
@@ -24,21 +24,19 @@ public class ProductionRecord {
     }
 
 
-
     public ProductionRecord(Product prod, int numProduced) {
         dateProduced = new Date();
         String newNumProduced = String.format("%05d", numProduced);
-        if (prod.getManufacturer().length() > 3){
-            firstThree = prod.getManufacturer().substring(0,3);
-        }
-        else{
+        if (prod.getManufacturer().length() > 3) {
+            firstThree = prod.getManufacturer().substring(0, 3);
+        } else {
             firstThree = prod.getManufacturer();
         }
         serialNumber = firstThree + prod.getType() + newNumProduced;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Prod. Num: " + productionNumber + " Product ID: " + productID + " Serial Num: " + serialNumber + " Date: " + dateProduced;
     }
 

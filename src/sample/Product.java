@@ -34,7 +34,7 @@ public abstract class Product implements Item {
         Manufacturer = manufacturer;
     }
 
-    public  String getName() {
+    public String getName() {
         return Name;
     }
 

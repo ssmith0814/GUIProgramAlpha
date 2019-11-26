@@ -1,5 +1,6 @@
 package sample;
 //imports
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,8 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.converter.TimeStringConverter;
-
 
 import java.net.URL;
 import java.sql.*;
@@ -95,11 +94,12 @@ public class Controller implements Initializable {
 
             PreparedStatement stmt = conn.prepareStatement(sql);
 
-            stmt.setString(1,String.valueOf(itemType.toString()));
-            stmt.setString(2,name);
-            stmt.setString(3,manufacturer);
+            stmt.setString(1, String.valueOf(itemType.toString()));
+            stmt.setString(2, name);
+            stmt.setString(3, manufacturer);
 
             stmt.executeUpdate();
+            conn.close();
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -125,11 +125,11 @@ public class Controller implements Initializable {
                 productLine.add(addProduct);
                 setupProductionLineTable();
             }
-        }catch (SQLException | IllegalArgumentException e){
+        } catch (SQLException | IllegalArgumentException e) {
             e.printStackTrace();
         }
 
-   }
+    }
     //Giving the record productions button an output
 
     @FXML
@@ -143,7 +143,7 @@ public class Controller implements Initializable {
 
         int count = Integer.parseInt(String.valueOf(QuantityComboBox.getValue()));
 
-        for (int i = 0; i < count; i++){
+        for (int i = 0; i < count; i++) {
             ProductionRecord recordProd = new ProductionRecord(selectedProd, i);
             productionRun.addAll(recordProd);
             addToProductionDB(recordProd);
@@ -151,57 +151,57 @@ public class Controller implements Initializable {
         }
     }
 
-    private void showProduction(){
+    private void showProduction() {
         ProductionLogTextArea.appendText(prodLog + "\n");
     }
 
-    private void addToProductionDB(ProductionRecord productionRecord){
+    private void addToProductionDB(ProductionRecord productionRecord) {
         int id = productionRecord.getProductID();
         String serialNum = productionRecord.getSerialNumber();
         Timestamp dateProduced = new Timestamp(productionRecord.getDateProduced().getTime());
 
-        try{
+        try {
             String sql = "INSERT INTO PRODUCTIONRECORD (PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES (?, ?, ?)";
             Connection conn = DriverManager.getConnection(DB_URL);
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
             preparedStatement.setInt(1, id);
             preparedStatement.setString(2, serialNum);
-            preparedStatement.setTimestamp(3,dateProduced);
+            preparedStatement.setTimestamp(3, dateProduced);
             preparedStatement.executeUpdate();
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-   private void loadProductionLog(){
-       int prodNum;
-       int prodID;
-       String prodSerial;
-       Timestamp prodDateProduced;
+    private void loadProductionLog() {
+        int prodNum;
+        int prodID;
+        String prodSerial;
+        Timestamp prodDateProduced;
 
-       String sql = "SELECT * FROM PRODUCTIONRECORD";
-       try{
-           Connection conn = DriverManager.getConnection(DB_URL);
-           PreparedStatement preparedStatement = conn.prepareStatement(sql);
-           ResultSet rs = preparedStatement.executeQuery();
+        String sql = "SELECT * FROM PRODUCTIONRECORD";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL);
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
 
-           while (rs.next()){
-               prodNum = rs.getInt("PRODUCTION_NUM");
-               prodID = rs.getInt("PRODUCT_ID");
-               prodSerial = rs.getString("SERIAL_NUM");
-               prodDateProduced = rs.getTimestamp("DATE_PRODUCED");
-               ProductionRecord recordProd = new ProductionRecord(prodNum, prodID, prodSerial, prodDateProduced);
+            while (rs.next()) {
+                prodNum = rs.getInt("PRODUCTION_NUM");
+                prodID = rs.getInt("PRODUCT_ID");
+                prodSerial = rs.getString("SERIAL_NUM");
+                prodDateProduced = rs.getTimestamp("DATE_PRODUCED");
+                ProductionRecord recordProd = new ProductionRecord(prodNum, prodID, prodSerial, prodDateProduced);
 
-               prodLog = FXCollections.observableArrayList();
-               prodLog.setAll(recordProd);
-           }
-       }catch (SQLException e){
-           e.printStackTrace();
-       }
-       showProduction();
-   }
+                prodLog = FXCollections.observableArrayList();
+                prodLog.setAll(recordProd);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        showProduction();
+    }
 
     private void setupProductionLineTable() {
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
