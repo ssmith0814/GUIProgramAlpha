@@ -25,16 +25,16 @@ public class ProductionRecord {
 
 
 
-    public ProductionRecord(Product productCount, int numProduced) {
+    public ProductionRecord(Product prod, int numProduced) {
         dateProduced = new Date();
         String newNumProduced = String.format("%05d", numProduced);
-        if (Product.getManufacturer().length() > 3){
-            firstThree = Product.getManufacturer().substring(0,3);
+        if (prod.getManufacturer().length() > 3){
+            firstThree = prod.getManufacturer().substring(0,3);
         }
         else{
-            firstThree = Product.getManufacturer();
+            firstThree = prod.getManufacturer();
         }
-        serialNumber = firstThree + Product.getType() + newNumProduced;
+        serialNumber = firstThree + prod.getType() + newNumProduced;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ProductionRecord {
 
     }
 
-    public int getProductID() {
+    int getProductID() {
         return productID;
     }
 
@@ -59,7 +59,7 @@ public class ProductionRecord {
         this.productID = productID;
     }
 
-    public String getSerialNumber() {
+    String getSerialNumber() {
         return serialNumber;
     }
 
@@ -68,7 +68,7 @@ public class ProductionRecord {
 
     }
 
-    public Date getDateProduced() {
+    Date getDateProduced() {
         return dateProduced;
     }
 

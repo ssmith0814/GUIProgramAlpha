@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.converter.TimeStringConverter;
 
 
 import java.net.URL;
@@ -18,6 +19,7 @@ public class Controller implements Initializable {
     private static final String JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URL = "jdbc:h2:./res/databas";
     public Button AddProductButton;
+    public Button RecordProductionsBtn;
 
     @FXML
     private ChoiceBox<ItemType> ItemTypeChoiceBox;
@@ -43,7 +45,7 @@ public class Controller implements Initializable {
     private ListView<Product> ProduceListView;
 
     @FXML
-    private TableColumn<Product, String> ProductColumn;
+    private TableColumn<Product, String> NameColumn;
 
     @FXML
     private TableColumn<Product, String> ManufacturerColumn;
@@ -51,7 +53,9 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<Product, String> ItemTypeColumn;
 
-    private ObservableList<Product> productLine;
+    private ObservableList<Product> productLine = FXCollections.observableArrayList();
+
+    private ObservableList<ProductionRecord> prodLog;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -64,12 +68,10 @@ public class Controller implements Initializable {
         ItemTypeChoiceBox.getItems().addAll(ItemType.values());
         //testMultimedia();
 
-        productLine = FXCollections.observableArrayList();
-
         setupProductionLineTable();
-        ProductLineTableView.setItems(productLine);
+        ProduceListView.setItems(productLine);
         loadProductList();
-        loadProductionLog();
+        //loadProductionLog();
     }
 
     @FXML
@@ -84,7 +86,7 @@ public class Controller implements Initializable {
     private void AddProduct() {
         String name = ProductNameText.getText();
         String manufacturer = ManufacturerText.getText();
-        ItemType itemType = ItemTypeChoiceBox.getSelectionModel().getSelectedItem();
+        ItemType itemType = ItemTypeChoiceBox.getValue();
         try {
             String sql = "INSERT INTO PRODUCT (TYPE, NAME, MANUFACTURER) VALUES (?, ?, ?)";
 
@@ -93,7 +95,7 @@ public class Controller implements Initializable {
 
             PreparedStatement stmt = conn.prepareStatement(sql);
 
-            stmt.setString(1,String.valueOf(itemType));
+            stmt.setString(1,String.valueOf(itemType.toString()));
             stmt.setString(2,name);
             stmt.setString(3,manufacturer);
 
@@ -102,59 +104,112 @@ public class Controller implements Initializable {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
         loadProductList();
     }
 
     @FXML
     private void loadProductList() {
+        String sql = "SELECT NAME, MANUFACTURER, TYPE FROM PRODUCT";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL);
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                String Name = rs.getString("NAME");
+                String Manufacturer = rs.getString("MANUFACTURER");
+                String Type = rs.getString("TYPE");
+
+                Product addProduct = new Widget(Name, Manufacturer, Type);
+                productLine.add(addProduct);
+                setupProductionLineTable();
+            }
+        }catch (SQLException | IllegalArgumentException e){
+            e.printStackTrace();
+        }
+
+   }
+    //Giving the record productions button an output
+
+    @FXML
+    void RecordProductionsBtnPressed(ActionEvent event) {
+
+        Product selectedProd = ProduceListView.getSelectionModel().getSelectedItem();
+        ObservableList<ProductionRecord> productionRun = FXCollections.observableArrayList();
+
+        //addToProductionDB();
 
 
-       String sql = "SELECT NAME, MANUFACTURER, TYPE FROM PRODUCT";
-       try {
+        int count = Integer.parseInt(String.valueOf(QuantityComboBox.getValue()));
+
+        for (int i = 0; i < count; i++){
+            ProductionRecord recordProd = new ProductionRecord(selectedProd, i);
+            productionRun.addAll(recordProd);
+            addToProductionDB(recordProd);
+            loadProductionLog();
+        }
+    }
+
+    private void showProduction(){
+        ProductionLogTextArea.appendText(prodLog + "\n");
+    }
+
+    private void addToProductionDB(ProductionRecord productionRecord){
+        int id = productionRecord.getProductID();
+        String serialNum = productionRecord.getSerialNumber();
+        Timestamp dateProduced = new Timestamp(productionRecord.getDateProduced().getTime());
+
+        try{
+            String sql = "INSERT INTO PRODUCTIONRECORD (PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES (?, ?, ?)";
+            Connection conn = DriverManager.getConnection(DB_URL);
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, serialNum);
+            preparedStatement.setTimestamp(3,dateProduced);
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+   private void loadProductionLog(){
+       int prodNum;
+       int prodID;
+       String prodSerial;
+       Timestamp prodDateProduced;
+
+       String sql = "SELECT * FROM PRODUCTIONRECORD";
+       try{
            Connection conn = DriverManager.getConnection(DB_URL);
            PreparedStatement preparedStatement = conn.prepareStatement(sql);
            ResultSet rs = preparedStatement.executeQuery();
 
-           while (rs.next()) {
-               String name = rs.getString("NAME");
-               String manufacturer = rs.getString("MANUFACTURER");
-               String type = rs.getString("TYPE");
+           while (rs.next()){
+               prodNum = rs.getInt("PRODUCTION_NUM");
+               prodID = rs.getInt("PRODUCT_ID");
+               prodSerial = rs.getString("SERIAL_NUM");
+               prodDateProduced = rs.getTimestamp("DATE_PRODUCED");
+               ProductionRecord recordProd = new ProductionRecord(prodNum, prodID, prodSerial, prodDateProduced);
 
-               Product addProduct = new Widget(name, manufacturer, type);
-               productLine.addAll(addProduct);
-               setupProductionLineTable();
+               prodLog = FXCollections.observableArrayList();
+               prodLog.setAll(recordProd);
            }
-       }catch (SQLException | IllegalArgumentException e){
+       }catch (SQLException e){
            e.printStackTrace();
-        }
-   }
-    //Giving the record productions button an output
-    @FXML
-    void RecordProductionsBtnPressed(ActionEvent event) {
-        System.out.println("Production Recorded");
-        //ProductionLogTextArea.setText();
-    }
-
-    void showProduction(){
-
-    }
-
-    void addToProductionDB(){
-
-    }
-
-   private void loadProductionLog(){
-
+       }
+       showProduction();
    }
 
     private void setupProductionLineTable() {
-        ProductColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         ManufacturerColumn.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
         ItemTypeColumn.setCellValueFactory(new PropertyValueFactory<>("Type"));
-
         ProductLineTableView.setItems(productLine);
     }
+
 
 //    public static void testMultimedia() {
 //        AudioPlayer newAudioProduct = new AudioPlayer("DP-X1A", "Onkyo",

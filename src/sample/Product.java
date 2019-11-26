@@ -3,11 +3,9 @@ package sample;
 public abstract class Product implements Item {
 
 
-    private static String Type;
-    private static String Manufacturer;
-    private static String Name;
-
-
+    private String Type;
+    private String Manufacturer;
+    private String Name;
 
     Product(String name, String manufacturer, String type) {
         Name = name;
@@ -20,15 +18,15 @@ public abstract class Product implements Item {
                 + Type;
     }
 
-    public static String getType() {
+    public String getType() {
         return Type;
     }
 
-    public static void setType(String type) {
+    public void setType(String type) {
         Type = type;
     }
 
-    static String getManufacturer() {
+    public String getManufacturer() {
         return Manufacturer;
     }
 
@@ -36,7 +34,7 @@ public abstract class Product implements Item {
         Manufacturer = manufacturer;
     }
 
-    public String getName() {
+    public  String getName() {
         return Name;
     }
 
@@ -50,4 +48,5 @@ class Widget extends Product {
     Widget(String name, String manufacturer, String type) {
         super(name, manufacturer, type);
     }
+
 }
