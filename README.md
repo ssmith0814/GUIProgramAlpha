@@ -13,12 +13,12 @@ In addition to the ability to record production, the software also needs the abi
 [Demo](https://gyazo.com/131c9f77aa9d964dd90956574abf403d)
 
 ## Documentation
-![JavaDocs](https://ssmith0814.github.io/GUIProgramAlpha/res/docs/index-1.html)
+[JavaDocs](https://ssmith0814.github.io/GUIProgramAlpha/res/docs/index-1.html)
 
 ## Diagrams
-![Product Table](C:/Users/shane/OneDrive/Pictures/ProductTable.png)
-![Employee Table](C:/Users/shane/OneDrive/Pictures/EmployeeTable.png)
-![Production Record Table](C:/Users/shane/OneDrive/Pictures/ProductionRecord.png)
+[Product Table](C:/Users/shane/OneDrive/Pictures/ProductTable.png)
+[Employee Table](C:/Users/shane/OneDrive/Pictures/EmployeeTable.png)
+[Production Record Table](C:/Users/shane/OneDrive/Pictures/ProductionRecord.png)
 ## Built With
 IntelliJ IDE Ultimate
 
