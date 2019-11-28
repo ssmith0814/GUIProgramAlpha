@@ -1,24 +1,36 @@
 /***************************************************
+ * Called by MoviePlayer to provide screen info.
  * @Author: Shane Smith
- * @Description: Called by MoviePlayer to provide screen info
- ***************************************************/
+ */
 
 package sample;
 
-public class Screen {
+class Screen {
 
-    private String resolution;
-    private int refreshrate;
-    private int responsetime;
+  private String resolution;
+  private int refreshrate;
+  private int responsetime;
 
-    Screen(String resolution, int refreshrate, int responsetime) {
-        this.resolution = resolution;
-        this.refreshrate = refreshrate;
-        this.responsetime = responsetime;
-    }
+  /***************************************************
+   * Constructor for a screen object.
+   * @Author: Shane Smith
+   */
 
-    public String toString() {
-        return "Screen:" + "\n" + "Resolution: " + resolution + "\n" + "Refresh rate: " + refreshrate + "\n" + "Response time: " + responsetime;
-    }
+  Screen(String resolution, int refreshrate, int responsetime) {
+    this.resolution = resolution;
+    this.refreshrate = refreshrate;
+    this.responsetime = responsetime;
+  }
+
+  /***************************************************
+   * Provides a console output that displays the Screen object.
+   * @Author: Shane Smith
+   * @return the output string to console.
+   */
+
+  public String toString() {
+    return "Screen:" + "\n" + "Resolution: " + resolution + "\n" + "Refresh rate: "
+        + refreshrate + "\n" + "Response time: " + responsetime;
+  }
 
 }

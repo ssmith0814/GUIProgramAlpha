@@ -1,21 +1,42 @@
 /***************************************************
+ * Gets implemented by Product class.
  * @Author: Shane Smith
- * @Description: gets implemented by Product class
- ***************************************************/
+ */
 
 package sample;
 
-public interface Item {
+interface Item {
 
-    //    int getId();
-    void setName(String name);
+  /***************************************************
+   * Setter of name.
+   * @Author: Shane Smith
+   * @param name name of product from implementation.
+   */
 
-    String getName();
+  void setName(String name);
 
-    void setManufacturer(String manufacturer);
+  /***************************************************
+   * Getter of name.
+   * @Author: Shane Smith
+   */
 
-    static String getManufacturer() {
-        return null;
-    }
+  String getName();
+
+  /***************************************************
+   * Setter of manufacturer.
+   * @Author: Shane Smith
+   * @param manufacturer manufacturer of product from implementation.
+   */
+
+  void setManufacturer(String manufacturer);
+
+  /***************************************************
+   * Getter of manufacturer.
+   * @Author: Shane Smith
+   */
+
+  static String getManufacturer() {
+    return null;
+  }
 
 }

@@ -1,13 +1,14 @@
 /***************************************************
+ * Adds getters for the Screen Specs for MoviePlayers.
  * @Author: Shane Smith
- ***************************************************/
+ */
 
 package sample;
 
 public interface ScreenSpec {
-    String getResolution();
+  String getResolution();
 
-    int getRefreshRate();
+  int getRefreshRate();
 
-    int getResponseTime();
+  int getResponseTime();
 }

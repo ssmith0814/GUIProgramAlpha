@@ -1,17 +1,17 @@
 /***************************************************
+ * Implemented by AudioPlayer and MoviePlayer.
  * @Author: Shane Smith
- * @Description: Implemented by AudioPlayer and MoviePlayer
- ***************************************************/
+ */
 
 package sample;
 
-public interface MultimediaControl {
+interface MultimediaControl {
 
-    void play();
+  void play();
 
-    void stop();
+  void stop();
 
-    void previous();
+  void previous();
 
-    void next();
+  void next();
 }
