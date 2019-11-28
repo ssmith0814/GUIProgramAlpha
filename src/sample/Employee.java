@@ -1,6 +1,6 @@
 /***************************************************
  * Gives template for Employee object.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -16,7 +16,7 @@ public class Employee {
 
   /***************************************************
    * providing a default employee object if info is invalid.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of employee is used to make username and email.
    * @param password password of employee is tested if it is valid.
    */
@@ -42,7 +42,7 @@ public class Employee {
 
   /***************************************************
    * Constructor for Employee object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of employee.
    * @param username username of employee.
    * @param email email of employee.
@@ -58,7 +58,7 @@ public class Employee {
 
   /***************************************************
    * Provides a console output that displays an Employee object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return returns the output string to console.
    */
 
@@ -69,7 +69,7 @@ public class Employee {
 
   /***************************************************
    * Splitting name into first and last to make the username.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name takes the full name of the Employee and splits it
    *             into the first and last to create the username.
    */
@@ -84,7 +84,7 @@ public class Employee {
 
   /***************************************************
    * Making sure that there is a space in the full name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name checks if there is a space in between the first and
    *             last name of the Employee.
    */
@@ -100,7 +100,7 @@ public class Employee {
 
   /***************************************************
    * Splitting the name into first and last to make the email.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name Employee's gets split into first and last name
    *             to create the email.
    */
@@ -116,7 +116,7 @@ public class Employee {
   /***************************************************
    * Making sure password is containing at least a
    * lowercase letter, uppercase letter, and a special character.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param password Employee's password gets verified.
    * @return if the password is valid or not.
    */
@@ -131,7 +131,7 @@ public class Employee {
 
   /***************************************************
    * Getter of Employee name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the Employee's name.
    */
 
@@ -141,7 +141,7 @@ public class Employee {
 
   /***************************************************
    * Setter of Employee name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name sets the name.
    */
 
@@ -152,7 +152,7 @@ public class Employee {
   /***************************************************
    * Getter of Employee username.
    * WARNING says can be package-private but then it breaks the Employee tableView.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the Employee username.
 
    */
@@ -164,7 +164,7 @@ public class Employee {
   /***************************************************
    * Getter of Employee password.
    * WARNING says can be package-private but then it breaks the Employee tableView.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the Employee password.
    */
 
@@ -175,7 +175,7 @@ public class Employee {
 
   /***************************************************
    * Setter of Employee password.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param password sets the password.
    */
 
@@ -186,7 +186,7 @@ public class Employee {
   /***************************************************
    * Getter of Employee email.
    * WARNING says can be package-private but then it breaks the Employee tableView.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the Employee email
    */
 

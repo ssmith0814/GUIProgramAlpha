@@ -1,6 +1,6 @@
 /***************************************************
  * Makes the GUI have functionality.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -125,7 +125,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Initializes the production record combobox with numbers 1-10.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void initializeComboBox() {
@@ -139,7 +139,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Initializes the GUI to be displayed.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param location used to initialize.
    * @param resources used to initialize.
    */
@@ -163,7 +163,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Giving the add production button functionality.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param event when the button is pressed, this method gets called.
    */
 
@@ -176,7 +176,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Puts the text/values from the input and uploads them into the database as a Product.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @FXML
@@ -221,7 +221,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Populates tableView and listView with the list of products.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @FXML
@@ -251,7 +251,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Tests if production input is a number or string.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param quantity input that is tested if it is a number.
    * @return returns true if the input is a number and
    *         false if it is anything else.
@@ -266,7 +266,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Giving the record productions button an output.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param event when the Record buton is pressed, this method is called.
    */
 
@@ -296,7 +296,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Populates Production Log with production record.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void showProduction() {
@@ -305,7 +305,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Adding production record info into database.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param productionRecord object that is getting recorded into the database.
    */
 
@@ -335,7 +335,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * preps the production record info for the textArea in the production log tab.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void loadProductionLog() {
@@ -372,7 +372,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Sets up columns in the tableView in the productLine tab.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void setupProductionLineTable() {
@@ -384,7 +384,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Giving the submit button in the Employee tab functionality.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param event when the Submit button is pressed, this method is called.
    */
 
@@ -397,7 +397,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Adds an Employee object into the database.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void addEmployee() throws SQLException {
@@ -445,7 +445,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Takes Employee objects from the database to be displayed.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void loadEmployeeList() {
@@ -475,7 +475,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Setting up columns fpr the Employee tab's tableView.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void setupEmployeeLineTable() {
@@ -488,7 +488,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Reversing a string using recursion.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param id This is the string that gets reversed.
    * @return the string gets returned in reverse.
    */
@@ -504,7 +504,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Displays an error when there is an unexpected input.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void showErrorLabel() {
@@ -514,7 +514,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Hides an error when there is an unexpected input.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void hideErrorLabel() {
@@ -523,7 +523,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Displays an error when there is an unexpected input.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void showProductionError() {
@@ -532,7 +532,7 @@ public class Controller implements Initializable {
 
   /***************************************************
    * Hides an error when there is an unexpected input.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   private void hideProductionError() {

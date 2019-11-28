@@ -1,6 +1,6 @@
 /***************************************************
  * Adds getters for the Screen Specs for MoviePlayers.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;

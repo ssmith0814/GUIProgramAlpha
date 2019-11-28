@@ -1,6 +1,6 @@
 /***************************************************
  * Adds the different ItemTypes of products.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -13,7 +13,7 @@ public enum ItemType {
 
   /***************************************************
    * Constructor that makes the abbreviations accessible.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param c gives access to hte abbreviations.
    */
 
@@ -23,7 +23,7 @@ public enum ItemType {
 
   /***************************************************
    * Getter of itemType Code.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the abbreviation of the itemType.
    */
 

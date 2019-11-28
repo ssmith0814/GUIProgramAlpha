@@ -1,6 +1,6 @@
 /***************************************************
  * Implemented by AudioPlayer and MoviePlayer.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;

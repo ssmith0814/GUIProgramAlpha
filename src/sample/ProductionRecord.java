@@ -1,6 +1,6 @@
 /***************************************************
  * Displays the Production Record and formats the serial number.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -15,7 +15,7 @@ class ProductionRecord {
 
   /***************************************************
    * Constructor for ProductionRecord.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param productionNumber production number of selected product.
    * @param productID product ID of selected product.
    * @param serialNumber serial number of selected product.
@@ -31,7 +31,7 @@ class ProductionRecord {
 
   /***************************************************
    * Constructor for ProductionRecord.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param i production number.
    */
 
@@ -44,7 +44,7 @@ class ProductionRecord {
 
   /***************************************************
    * Constructor for ProductionRecord.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param prod this is the object Product.
    * @param numProduced This is the number of products being recorded.
    */
@@ -63,7 +63,7 @@ class ProductionRecord {
 
   /***************************************************
    * Provides a console output that displays the ProductionRecord object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the output string to console.
    */
 
@@ -75,7 +75,7 @@ class ProductionRecord {
 
   /***************************************************
    * Getter of Production Number.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return production number of recorded product.
    */
 
@@ -85,7 +85,7 @@ class ProductionRecord {
 
   /***************************************************
    * Setter of Production Number.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param productionNumber production number of recorded product.
    */
 
@@ -96,7 +96,7 @@ class ProductionRecord {
 
   /***************************************************
    * Getter of product ID.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the product's ID.
    */
 
@@ -106,7 +106,7 @@ class ProductionRecord {
 
   /***************************************************
    * Setter of the product's ID.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param productID product ID of recorded product.
    */
 
@@ -116,7 +116,7 @@ class ProductionRecord {
 
   /***************************************************
    * Getter of product's Serial Number.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the product's Serial Number.
    */
 
@@ -126,7 +126,7 @@ class ProductionRecord {
 
   /***************************************************
    * Setter of product's Serial Number.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param serialNumber serial number of recorded product.
    */
 
@@ -136,7 +136,7 @@ class ProductionRecord {
 
   /***************************************************
    * Getter of date produced.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the timestamp that the production was recorded.
    */
 

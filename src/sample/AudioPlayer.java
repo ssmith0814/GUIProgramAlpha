@@ -4,7 +4,7 @@
  * Implements MultimediaControl to display:
  * play, stop, previous, next.
  *
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -16,7 +16,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Sets up constructor for an AudioPlayer object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of the AudioPlayer object.
    * @param manufacturer manufacturer of the AudioPlayer object.
    * @param supportedAudioFormats supported audio format of the AudioPlayer.
@@ -32,7 +32,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Provides a console output that displays the AudioPlayer object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the output string to console.
    */
 
@@ -43,7 +43,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Playing" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override
@@ -53,7 +53,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Stopping" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override
@@ -63,7 +63,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Previous" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override
@@ -73,7 +73,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Next" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override

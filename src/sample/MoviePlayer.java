@@ -1,6 +1,6 @@
 /***************************************************
  * Template for MoviePlayers.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -12,7 +12,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Sets up constructor for a MoviePlayer object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of product object.
    * @param manufacturer manufacturer of product object.
    * @param screen screen of MoviePlayer object.
@@ -27,7 +27,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Provides a console output that displays the MoviePlayer object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the output string to console
    */
 
@@ -37,7 +37,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Playing" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override
@@ -47,7 +47,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Stopping" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override
@@ -57,7 +57,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Previous" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override
@@ -67,7 +67,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /***************************************************
    * Prints to console "Next" when called.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   @Override

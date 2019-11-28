@@ -1,6 +1,6 @@
 /***************************************************
  * Main class that runs the program and sets the stage.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -33,7 +33,7 @@ public class Main extends Application {
   /***************************************************
    * Connects to database.
    *
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param sql This is the sql string that gets access to the database.
    */
   public static void initializeDB(String sql) {

@@ -1,6 +1,6 @@
 /***************************************************
  * Called by MoviePlayer to provide screen info.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -13,7 +13,7 @@ class Screen {
 
   /***************************************************
    * Constructor for a screen object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   Screen(String resolution, int refreshrate, int responsetime) {
@@ -24,7 +24,7 @@ class Screen {
 
   /***************************************************
    * Provides a console output that displays the Screen object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the output string to console.
    */
 

@@ -1,6 +1,6 @@
 /***************************************************
  * Adds different MonitorTypes for MoviePlayers.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;

@@ -1,6 +1,6 @@
 /***************************************************
  * Gets implemented by Product class.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -9,7 +9,7 @@ interface Item {
 
   /***************************************************
    * Setter of name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of product from implementation.
    */
 
@@ -17,14 +17,14 @@ interface Item {
 
   /***************************************************
    * Getter of name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   String getName();
 
   /***************************************************
    * Setter of manufacturer.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param manufacturer manufacturer of product from implementation.
    */
 
@@ -32,7 +32,7 @@ interface Item {
 
   /***************************************************
    * Getter of manufacturer.
-   * @Author: Shane Smith
+   * @author Shane Smith
    */
 
   static String getManufacturer() {

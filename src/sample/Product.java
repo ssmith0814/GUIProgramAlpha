@@ -1,6 +1,6 @@
 /***************************************************
  * Gives template for product and Widget to display the product.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 package sample;
@@ -13,7 +13,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Creates constructor for making a Product object.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of the Product.
    * @param manufacturer manufacturer of the Product.
    * @param type type of the Product.
@@ -27,7 +27,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Provides an output to console of the Product object info.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return the output of Product object into console.
    */
 
@@ -38,7 +38,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Getter of product Type.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return type of Product.
    */
 
@@ -48,7 +48,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Setter of product Type.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param type sets the type of Product.
    */
 
@@ -58,7 +58,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Getter of product Manufacturer.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return manufacturer of Product
    */
 
@@ -68,7 +68,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Setter of product Manufacturer.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param manufacturer sets the manufacturer of Product.
    */
 
@@ -78,7 +78,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Getter of product Name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @return name of Product.
    */
 
@@ -88,7 +88,7 @@ public abstract class Product implements Item {
 
   /***************************************************
    * Setter of product Name.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name sets the name of Product.
    */
 
@@ -99,14 +99,14 @@ public abstract class Product implements Item {
 
 /***************************************************
  * Extends Product to create a Product object.
- * @Author: Shane Smith
+ * @author Shane Smith
  */
 
 class Widget extends Product {
 
   /***************************************************
    * Creates a product object through call to super.
-   * @Author: Shane Smith
+   * @author Shane Smith
    * @param name name of Product.
    * @param manufacturer Manufacturer of Product.
    * @param type type of Product.
