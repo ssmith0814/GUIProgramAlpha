@@ -32,7 +32,6 @@ public class Main extends Application {
 
   /***************************************************
    * Connects to database.
-   *
    * @author Shane Smith
    * @param sql This is the sql string that gets access to the database.
    */
