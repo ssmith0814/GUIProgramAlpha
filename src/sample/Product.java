@@ -7,9 +7,9 @@ package sample;
 
 public abstract class Product implements Item {
 
-  private String Type;
-  private String Manufacturer;
-  private String Name;
+  private String type;
+  private String manufacturer;
+  private String name;
 
   /***************************************************
    * Creates constructor for making a Product object.
@@ -20,9 +20,9 @@ public abstract class Product implements Item {
    */
 
   Product(String name, String manufacturer, String type) {
-    Name = name;
-    Manufacturer = manufacturer;
-    Type = type;
+    this.name = name;
+    this.manufacturer = manufacturer;
+    this.type = type;
   }
 
   /***************************************************
@@ -32,8 +32,8 @@ public abstract class Product implements Item {
    */
 
   public String toString() {
-    return "Name: " + Name + "\n" + "Manufacturer: " + Manufacturer + "\n" + "Type: "
-        + Type;
+    return "Name: " + name + "\n" + "Manufacturer: " + manufacturer + "\n" + "Type: "
+        + type;
   }
 
   /***************************************************
@@ -43,7 +43,7 @@ public abstract class Product implements Item {
    */
 
   public String getType() {
-    return Type;
+    return type;
   }
 
   /***************************************************
@@ -53,7 +53,7 @@ public abstract class Product implements Item {
    */
 
   public void setType(String type) {
-    Type = type;
+    this.type = type;
   }
 
   /***************************************************
@@ -63,7 +63,7 @@ public abstract class Product implements Item {
    */
 
   public String getManufacturer() {
-    return Manufacturer;
+    return manufacturer;
   }
 
   /***************************************************
@@ -73,7 +73,7 @@ public abstract class Product implements Item {
    */
 
   public void setManufacturer(String manufacturer) {
-    Manufacturer = manufacturer;
+    this.manufacturer = manufacturer;
   }
 
   /***************************************************
@@ -83,7 +83,7 @@ public abstract class Product implements Item {
    */
 
   public String getName() {
-    return Name;
+    return name;
   }
 
   /***************************************************
@@ -93,26 +93,6 @@ public abstract class Product implements Item {
    */
 
   public void setName(String name) {
-    Name = name;
-  }
-}
-
-/***************************************************
- * Extends Product to create a Product object.
- * @author Shane Smith
- */
-
-class Widget extends Product {
-
-  /***************************************************
-   * Creates a product object through call to super.
-   * @author Shane Smith
-   * @param name name of Product.
-   * @param manufacturer Manufacturer of Product.
-   * @param type type of Product.
-   */
-
-  Widget(String name, String manufacturer, String type) {
-    super(name, manufacturer, type);
+    this.name = name;
   }
 }

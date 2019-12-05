@@ -34,19 +34,19 @@
                 <Label prefHeight="57.0" prefWidth="138.0" text="Product Name"/>
                 <Label text="Manufacturer" GridPane.rowIndex="1"/>
                 <Label text="Item Type" GridPane.rowIndex="2"/>
-                <TextField fx:id="ProductNameText" promptText="ie: iPod" GridPane.columnIndex="1"/>
-                <TextField fx:id="ManufacturerText" promptText="ie: Apple" GridPane.columnIndex="1"
+                <TextField fx:id="productNameText" promptText="ie: iPod" GridPane.columnIndex="1"/>
+                <TextField fx:id="manufacturerText" promptText="ie: Apple" GridPane.columnIndex="1"
                            GridPane.rowIndex="1"/>
-                <ChoiceBox fx:id="ItemTypeChoiceBox" prefHeight="25.0" prefWidth="287.0" GridPane.columnIndex="1"
+                <ChoiceBox fx:id="itemTypeChoiceBox" prefHeight="25.0" prefWidth="287.0" GridPane.columnIndex="1"
                            GridPane.rowIndex="2"/>
             </GridPane>
-            <Button fx:id="AddProductButton" layoutX="260.0" layoutY="157.0" mnemonicParsing="false"
-                    onAction="#AddProductBtn" text="Add Product"/>
-            <TableView fx:id="ProductLineTableView" layoutX="62.0" layoutY="226.0" prefHeight="132.0" prefWidth="479.0">
+            <Button fx:id="addProductButton" layoutX="260.0" layoutY="157.0" mnemonicParsing="false"
+                    onAction="#addProductBtn" text="Add Product"/>
+            <TableView fx:id="productTableView" layoutX="62.0" layoutY="226.0" prefHeight="132.0" prefWidth="479.0">
                 <columns>
-                    <TableColumn fx:id="NameColumn" prefWidth="134.0" text="Name"/>
-                    <TableColumn fx:id="ManufacturerColumn" prefWidth="127.0" text="Manufacturer"/>
-                    <TableColumn fx:id="ItemTypeColumn" prefWidth="75.0" text="Item Type"/>
+                    <TableColumn fx:id="nameColumn" prefWidth="134.0" text="Name"/>
+                    <TableColumn fx:id="manufacturerColumn" prefWidth="127.0" text="Manufacturer"/>
+                    <TableColumn fx:id="itemTypeColumn" prefWidth="75.0" text="Item Type"/>
                 </columns>
                 <columnResizePolicy>
                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
@@ -59,41 +59,41 @@
     <Tab text="Produce">
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <Label layoutX="254.0" layoutY="249.0" prefHeight="25.0" prefWidth="92.0" text="Choose Quantity"/>
-            <Button fx:id="RecordProductionsBtn" layoutX="243.0" layoutY="323.0" mnemonicParsing="false"
-                    onAction="#RecordProductionsBtnPressed" text="Record Production"/>
-            <ComboBox fx:id="QuantityComboBox" editable="true" layoutX="201.0" layoutY="274.0" prefHeight="25.0"
+            <Button fx:id="recordProductionsBtn" layoutX="243.0" layoutY="323.0" mnemonicParsing="false"
+                    onAction="#recordProductionsBtnPressed" text="Record Production"/>
+            <ComboBox fx:id="quantityComboBox" editable="true" layoutX="201.0" layoutY="274.0" prefHeight="25.0"
                       prefWidth="198.0"/>
-            <ListView fx:id="ProduceListView" layoutX="82.0" layoutY="39.0" prefHeight="200.0" prefWidth="437.0"/>
+            <ListView fx:id="productListView" layoutX="82.0" layoutY="39.0" prefHeight="200.0" prefWidth="437.0"/>
             <Label layoutX="258.0" layoutY="14.0" text="Choose Product"/>
-            <Label fx:id="ProductionError" layoutX="241.0" layoutY="299.0" text="Please enter a number"/>
+            <Label fx:id="productionError" layoutX="241.0" layoutY="299.0" text="Please enter a number"/>
         </AnchorPane>
     </Tab>
     <Tab text="Production Log">
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
-            <TextArea fx:id="ProductionLogTextArea" layoutX="14.0" layoutY="14.0" prefHeight="333.0" prefWidth="573.0"/>
+            <TextArea fx:id="productionLogTextArea" layoutX="14.0" layoutY="14.0" prefHeight="333.0" prefWidth="573.0"/>
         </AnchorPane>
     </Tab>
     <Tab text="Employee">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <Label layoutX="19.0" layoutY="266.0" prefHeight="23.0" prefWidth="154.0"
                    text="Please enter your full name:"/>
-            <TextField fx:id="EmpNameText" layoutX="171.0" layoutY="265.0" prefHeight="25.0" prefWidth="250.0"
+            <TextField fx:id="empNameText" layoutX="171.0" layoutY="265.0" prefHeight="25.0" prefWidth="250.0"
                        promptText="ie: Shane Smith"/>
-            <Button fx:id="SubmitEmpBtn" layoutX="480.0" layoutY="294.0" mnemonicParsing="false"
-                    onAction="#SubmitEmpBtnPressed" text="Submit"/>
-            <TextField fx:id="EmpPassText" layoutX="171.0" layoutY="310.0" prefHeight="25.0" prefWidth="250.0"
+            <Button fx:id="submitEmpBtn" layoutX="480.0" layoutY="294.0" mnemonicParsing="false"
+                    onAction="#submitEmpBtnPressed" text="Submit"/>
+            <TextField fx:id="empPassText" layoutX="171.0" layoutY="310.0" prefHeight="25.0" prefWidth="250.0"
                        promptText="ie: Password$"/>
             <Label layoutX="19.0" layoutY="314.0" text="Please enter a password:"/>
             <Label layoutX="19.0" layoutY="339.0" opacity="0.5" prefHeight="21.0" prefWidth="463.0"
                    text="Password must contain a lowercase letter, an uppercase letter, and a special character"
                    wrapText="true"/>
             <Label layoutX="19.0" layoutY="289.0" opacity="0.5" text="(First Last)"/>
-            <TableView fx:id="EmpUserInfo" layoutX="19.0" layoutY="17.0" prefHeight="237.0" prefWidth="559.0">
+            <TableView fx:id="empUserInfo" layoutX="19.0" layoutY="17.0" prefHeight="237.0" prefWidth="559.0">
                 <columns>
-                    <TableColumn fx:id="EmpNameCol" prefWidth="101.0" text="Name"/>
-                    <TableColumn fx:id="EmpUserCol" prefWidth="116.0" text="Username"/>
-                    <TableColumn fx:id="EmpEmailCol" prefWidth="235.0" text="Email"/>
-                    <TableColumn fx:id="EmpPassCol" prefWidth="106.0" text="Password"/>
+                    <TableColumn fx:id="empNameCol" prefWidth="101.0" text="Name"/>
+                    <TableColumn fx:id="empUserCol" prefWidth="116.0" text="Username"/>
+                    <TableColumn fx:id="empEmailCol" prefWidth="235.0" text="Email"/>
+                    <TableColumn fx:id="empPassCol" prefWidth="106.0" text="Password"/>
                 </columns>
             </TableView>
         </AnchorPane>

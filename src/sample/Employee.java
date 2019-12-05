@@ -91,9 +91,9 @@ public class Employee {
 
   //
   private boolean checkName(String name) {
-    final String REGEX_NAME_CHECK = "([a-zA-Z]+\\s[a-zA-Z]+)";
+    final String RegexNameCheck = "([a-zA-Z]+\\s[a-zA-Z]+)";
 
-    Pattern pattern = Pattern.compile(REGEX_NAME_CHECK);
+    Pattern pattern = Pattern.compile(RegexNameCheck);
 
     return pattern.matcher(name).matches();
   }
@@ -122,9 +122,9 @@ public class Employee {
    */
 
   private boolean isValidPassword(String password) {
-    final String REGEX_PASS_CHECK = "(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&])[a-zA-Z!@#$%&]+";
+    final String regexPassCheck = "(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&])[a-zA-Z!@#$%&]+";
 
-    Pattern pattern = Pattern.compile(REGEX_PASS_CHECK);
+    Pattern pattern = Pattern.compile(regexPassCheck);
 
     return pattern.matcher(password).matches();
   }

@@ -37,13 +37,13 @@ public class Main extends Application {
    */
   public static void initializeDB(String sql) {
     System.out.println(sql);
-    final String JDBC_DRIVER = "org.h2.Driver";
-    final String DB_URL = "jdbc:h2:./res/PTI";
-    final String USER = "";
-    final String PASS = "";
+    final String jdbcDriver = "org.h2.Driver";
+    final String dbUrl = "jdbc:h2:./res/PTI";
+    final String user = "";
+    final String pass = "";
     try {
-      Class.forName(JDBC_DRIVER);
-      Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+      Class.forName(jdbcDriver);
+      Connection conn = DriverManager.getConnection(dbUrl, user, pass);
       Statement stmt = conn.createStatement();
       stmt.executeUpdate(sql);
       stmt.close();

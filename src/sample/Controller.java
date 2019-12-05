@@ -44,74 +44,74 @@ public class Controller implements Initializable {
 
   //adding all the FXid's for GUI
   @FXML
-  private TextField EmpNameText;
+  private TextField empNameText;
 
   @FXML
-  private TextField EmpPassText;
+  private TextField empPassText;
 
   @FXML
-  private TableColumn<Object, Object> EmpNameCol;
+  private TableColumn<Object, Object> empNameCol;
 
   @FXML
-  private TableColumn<Object, Object> EmpUserCol;
+  private TableColumn<Object, Object> empUserCol;
 
   @FXML
-  private TableColumn<Object, Object> EmpEmailCol;
+  private TableColumn<Object, Object> empEmailCol;
 
   @FXML
-  private TableColumn<Object, Object> EmpPassCol;
+  private TableColumn<Object, Object> empPassCol;
 
   @FXML
-  private Button SubmitEmpBtn;
+  private Button submitEmpBtn;
 
   @FXML
-  private TableView<Employee> EmpUserInfo;
+  private TableView<Employee> empUserInfo;
 
   @FXML
   private Label productError;
 
   @FXML
-  private Label ProductionError;
+  private Label productionError;
 
   @FXML
-  private ChoiceBox<ItemType> ItemTypeChoiceBox;
+  private ChoiceBox<ItemType> itemTypeChoiceBox;
 
   @FXML
-  private Button AddProductButton;
+  private Button addProductButton;
 
   @FXML
-  private Button RecordProductionsBtn;
+  private Button recordProductionsBtn;
 
   @FXML
-  private TextField ProductNameText;
+  private TextField productNameText;
 
   @FXML
-  private TextField ManufacturerText;
+  private TextField manufacturerText;
 
   @FXML
-  private ComboBox<String> QuantityComboBox;
+  private ComboBox<String> quantityComboBox;
 
   //options for comboBox in the record productions tab
   private ObservableList<String> chooseQuantity =
       FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
   @FXML
-  private TextArea ProductionLogTextArea;
+  private TextArea productionLogTextArea;
 
   @FXML
-  private TableView<Product> ProductLineTableView;
+  private TableView<Product> productTableView;
 
   @FXML
-  private ListView<Product> ProduceListView;
+  private ListView<Product> productListView;
 
   @FXML
-  private TableColumn<Product, String> NameColumn;
+  private TableColumn<Product, String> nameColumn;
 
   @FXML
-  private TableColumn<Product, String> ManufacturerColumn;
+  private TableColumn<Product, String> manufacturerColumn;
 
   @FXML
-  private TableColumn<Product, String> ItemTypeColumn;
+  private TableColumn<Product, String> itemTypeColumn;
 
   //list of products that get added to the listView and tableView
   // in the products and record production tabs
@@ -130,11 +130,11 @@ public class Controller implements Initializable {
 
   private void initializeComboBox() {
     //Giving the combo box options
-    QuantityComboBox.setItems(chooseQuantity);
+    quantityComboBox.setItems(chooseQuantity);
     //Making the combo box editable
-    QuantityComboBox.setEditable(true);
+    quantityComboBox.setEditable(true);
     //making the default selection be the first option
-    QuantityComboBox.getSelectionModel().selectFirst();
+    quantityComboBox.getSelectionModel().selectFirst();
   }
 
   /***************************************************
@@ -147,12 +147,12 @@ public class Controller implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
-    ItemTypeChoiceBox.getItems().addAll(ItemType.values());
-
+    itemTypeChoiceBox.getItems().addAll(ItemType.values());
+    itemTypeChoiceBox.getSelectionModel().selectFirst();
     //sets up the tableView for products tab
     setupProductionLineTable();
     //populates the listView with the products
-    ProduceListView.setItems(productLine);
+    productListView.setItems(productLine);
     //calls the method that populates the tableView with the products
     initializeComboBox();
     loadProductList();
@@ -168,8 +168,8 @@ public class Controller implements Initializable {
    */
 
   @FXML
-  void AddProductBtn(ActionEvent event) {
-    AddProduct();
+  void addProductBtn(ActionEvent event) {
+    addProduct();
     productLine.clear();
     loadProductList();
   }
@@ -180,10 +180,10 @@ public class Controller implements Initializable {
    */
 
   @FXML
-  private void AddProduct() {
-    String name = ProductNameText.getText();
-    String manufacturer = ManufacturerText.getText();
-    ItemType itemType = ItemTypeChoiceBox.getValue();
+  private void addProduct() {
+    String name = productNameText.getText();
+    String manufacturer = manufacturerText.getText();
+    ItemType itemType = itemTypeChoiceBox.getValue();
 
     try {
       if (name.equals("")) {
@@ -234,11 +234,11 @@ public class Controller implements Initializable {
 
       while (rs.next()) {
         //retrieving info from database to display
-        String Name = rs.getString("NAME");
-        String Manufacturer = rs.getString("MANUFACTURER");
-        String Type = rs.getString("TYPE");
+        String name = rs.getString("NAME");
+        String manufacturer = rs.getString("MANUFACTURER");
+        String type = rs.getString("TYPE");
 
-        Product addProduct = new Widget(Name, Manufacturer, Type);
+        Product addProduct = new Widget(name, manufacturer, type);
         productLine.add(addProduct);
         setupProductionLineTable();
       }
@@ -258,9 +258,9 @@ public class Controller implements Initializable {
    */
 
   private boolean isInteger(String quantity) {
-    final String REGEX_IS_NUM = "(\\d+)";
+    final String regexIsNum = "(\\d+)";
 
-    Pattern pattern = Pattern.compile(REGEX_IS_NUM);
+    Pattern pattern = Pattern.compile(regexIsNum);
     return pattern.matcher(quantity).matches();
   }
 
@@ -271,17 +271,17 @@ public class Controller implements Initializable {
    */
 
   @FXML
-  void RecordProductionsBtnPressed(ActionEvent event) {
-    Product selectedProd = ProduceListView.getSelectionModel().getSelectedItem();
+  void recordProductionsBtnPressed(ActionEvent event) {
+    Product selectedProd = productListView.getSelectionModel().getSelectedItem();
     if (selectedProd == null) {
-      ProduceListView.getSelectionModel().selectFirst();
-      selectedProd = ProduceListView.getSelectionModel().getSelectedItem();
+      productListView.getSelectionModel().selectFirst();
+      selectedProd = productListView.getSelectionModel().getSelectedItem();
     }
-    String Quantity = String.valueOf(QuantityComboBox.getSelectionModel().getSelectedItem());
+    String quantity = String.valueOf(quantityComboBox.getSelectionModel().getSelectedItem());
     int count = 0;
     ObservableList<ProductionRecord> productionRun = FXCollections.observableArrayList();
-    if (isInteger(Quantity)) {
-      count = Integer.parseInt(Quantity);
+    if (isInteger(quantity)) {
+      count = Integer.parseInt(quantity);
       hideProductionError();
     } else {
       showProductionError();
@@ -300,7 +300,7 @@ public class Controller implements Initializable {
    */
 
   private void showProduction() {
-    ProductionLogTextArea.appendText(prodLog + "\n");
+    productionLogTextArea.appendText(prodLog + "\n");
   }
 
   /***************************************************
@@ -376,10 +376,10 @@ public class Controller implements Initializable {
    */
 
   private void setupProductionLineTable() {
-    NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
-    ManufacturerColumn.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
-    ItemTypeColumn.setCellValueFactory(new PropertyValueFactory<>("Type"));
-    ProductLineTableView.setItems(productLine);
+    nameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+    manufacturerColumn.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
+    itemTypeColumn.setCellValueFactory(new PropertyValueFactory<>("Type"));
+    productTableView.setItems(productLine);
   }
 
   /***************************************************
@@ -389,7 +389,7 @@ public class Controller implements Initializable {
    */
 
   @FXML
-  void SubmitEmpBtnPressed(ActionEvent event) throws SQLException {
+  void submitEmpBtnPressed(ActionEvent event) throws SQLException {
     addEmployee();
     employeeList.clear();
     loadEmployeeList();
@@ -401,8 +401,8 @@ public class Controller implements Initializable {
    */
 
   private void addEmployee() throws SQLException {
-    String name = EmpNameText.getText();
-    String pass = EmpPassText.getText();
+    String name = empNameText.getText();
+    String pass = empPassText.getText();
     Employee emp = new Employee(name, pass);
     String empName = emp.getName();
     String empEmail = emp.getEmail();
@@ -479,11 +479,11 @@ public class Controller implements Initializable {
    */
 
   private void setupEmployeeLineTable() {
-    EmpNameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
-    EmpUserCol.setCellValueFactory(new PropertyValueFactory<>("Username"));
-    EmpEmailCol.setCellValueFactory(new PropertyValueFactory<>("Email"));
-    EmpPassCol.setCellValueFactory(new PropertyValueFactory<>("Password"));
-    EmpUserInfo.setItems(employeeList);
+    empNameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
+    empUserCol.setCellValueFactory(new PropertyValueFactory<>("Username"));
+    empEmailCol.setCellValueFactory(new PropertyValueFactory<>("Email"));
+    empPassCol.setCellValueFactory(new PropertyValueFactory<>("Password"));
+    empUserInfo.setItems(employeeList);
   }
 
   /***************************************************
@@ -527,7 +527,7 @@ public class Controller implements Initializable {
    */
 
   private void showProductionError() {
-    ProductionError.setVisible(true);
+    productionError.setVisible(true);
   }
 
   /***************************************************
@@ -536,7 +536,7 @@ public class Controller implements Initializable {
    */
 
   private void hideProductionError() {
-    ProductionError.setVisible(false);
+    productionError.setVisible(false);
   }
 
 }

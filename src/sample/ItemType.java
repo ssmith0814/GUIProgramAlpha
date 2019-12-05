@@ -14,11 +14,11 @@ public enum ItemType {
   /***************************************************
    * Constructor that makes the abbreviations accessible.
    * @author Shane Smith
-   * @param c gives access to hte abbreviations.
+   * @param code gives access to hte abbreviations.
    */
 
-  ItemType(String c) {
-    code = c;
+  ItemType(String code) {
+    this.code = code;
   }
 
   /***************************************************
