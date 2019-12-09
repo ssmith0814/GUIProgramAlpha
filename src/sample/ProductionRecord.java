@@ -53,12 +53,13 @@ class ProductionRecord {
     dateProduced = new Date();
     String newNumProduced = String.format("%05d", numProduced);
     String firstThree;
+    String prodType = String.valueOf(ItemType.valueOf(prod.getType()).code);
     if (prod.getManufacturer().length() > 3) {
       firstThree = prod.getManufacturer().substring(0, 3);
     } else {
       firstThree = prod.getManufacturer();
     }
-    serialNumber = firstThree + prod.getType() + newNumProduced;
+    serialNumber = firstThree + prodType + newNumProduced;
   }
 
   /***************************************************
