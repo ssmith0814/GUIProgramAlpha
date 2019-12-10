@@ -4,7 +4,6 @@ package sample;
  * Extends Product to create a Product object.
  * @author Shane Smith
  */
-
 class Widget extends Product {
 
   /***************************************************
@@ -14,7 +13,6 @@ class Widget extends Product {
    * @param manufacturer Manufacturer of Product.
    * @param type type of Product.
    */
-
   Widget(String name, String manufacturer, String type) {
     super(name, manufacturer, type);
   }

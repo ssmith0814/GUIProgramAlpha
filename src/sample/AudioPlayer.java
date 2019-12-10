@@ -6,7 +6,6 @@
  *
  * @author Shane Smith
  */
-
 package sample;
 
 public class AudioPlayer extends Product implements MultimediaControl {
@@ -22,7 +21,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @param supportedAudioFormats supported audio format of the AudioPlayer.
    * @param supportedPlaylistFormats supported playlist format of the AudioPlayer.
    */
-
   AudioPlayer(String name, String manufacturer, String supportedAudioFormats,
               String supportedPlaylistFormats) {
     super(name, manufacturer, ItemType.AUDIO.code);
@@ -35,7 +33,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @author Shane Smith
    * @return the output string to console.
    */
-
   public String toString() {
     return super.toString() + "\nSupported Audio Formats: " + supportedAudioFormats
         + "\nSupported Playlist Formats: " + supportedPlaylistFormats;
@@ -45,7 +42,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * Prints to console "Playing" when called.
    * @author Shane Smith
    */
-
   @Override
   public void play() {
     System.out.println("Playing");
@@ -55,7 +51,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * Prints to console "Stopping" when called.
    * @author Shane Smith
    */
-
   @Override
   public void stop() {
     System.out.println("Stopping");
@@ -65,7 +60,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * Prints to console "Previous" when called.
    * @author Shane Smith
    */
-
   @Override
   public void previous() {
     System.out.println("Previous");
@@ -75,7 +69,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * Prints to console "Next" when called.
    * @author Shane Smith
    */
-
   @Override
   public void next() {
     System.out.println("Next");

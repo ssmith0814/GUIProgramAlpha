@@ -2,7 +2,6 @@
  * Makes the GUI have functionality.
  * @author Shane Smith
  */
-
 package sample;
 
 //imports
@@ -127,7 +126,6 @@ public class Controller implements Initializable {
    * Initializes the production record combobox with numbers 1-10.
    * @author Shane Smith
    */
-
   private void initializeComboBox() {
     //Giving the combo box options
     quantityComboBox.setItems(chooseQuantity);
@@ -143,7 +141,6 @@ public class Controller implements Initializable {
    * @param location used to initialize.
    * @param resources used to initialize.
    */
-
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
@@ -166,7 +163,6 @@ public class Controller implements Initializable {
    * @author Shane Smith
    * @param event when the button is pressed, this method gets called.
    */
-
   @FXML
   void addProductBtn(ActionEvent event) {
     addProduct();
@@ -178,7 +174,6 @@ public class Controller implements Initializable {
    * Puts the text/values from the input and uploads them into the database as a Product.
    * @author Shane Smith
    */
-
   @FXML
   private void addProduct() {
     String name = productNameText.getText();
@@ -223,7 +218,6 @@ public class Controller implements Initializable {
    * Populates tableView and listView with the list of products.
    * @author Shane Smith
    */
-
   @FXML
   private void loadProductList() {
     String sql = "SELECT NAME, MANUFACTURER, TYPE FROM PRODUCT";
@@ -256,7 +250,6 @@ public class Controller implements Initializable {
    * @return returns true if the input is a number and
    *         false if it is anything else.
    */
-
   private boolean isInteger(String quantity) {
     final String regexIsNum = "(\\d+)";
 
@@ -269,7 +262,6 @@ public class Controller implements Initializable {
    * @author Shane Smith
    * @param event when the Record buton is pressed, this method is called.
    */
-
   @FXML
   void recordProductionsBtnPressed(ActionEvent event) {
     Product selectedProd = productListView.getSelectionModel().getSelectedItem();
@@ -298,7 +290,6 @@ public class Controller implements Initializable {
    * Populates Production Log with production record.
    * @author Shane Smith
    */
-
   private void showProduction() {
     productionLogTextArea.appendText(prodLog + "\n");
   }
@@ -308,7 +299,6 @@ public class Controller implements Initializable {
    * @author Shane Smith
    * @param productionRecord object that is getting recorded into the database.
    */
-
   private void addToProductionDB(ProductionRecord productionRecord) {
     int id = productionRecord.getProductID();
     String serialNum = productionRecord.getSerialNumber();
@@ -337,7 +327,6 @@ public class Controller implements Initializable {
    * preps the production record info for the textArea in the production log tab.
    * @author Shane Smith
    */
-
   private void loadProductionLog() {
     int prodNum;
     int prodID;
@@ -374,7 +363,6 @@ public class Controller implements Initializable {
    * Sets up columns in the tableView in the productLine tab.
    * @author Shane Smith
    */
-
   private void setupProductionLineTable() {
     nameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
     manufacturerColumn.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
@@ -387,7 +375,6 @@ public class Controller implements Initializable {
    * @author Shane Smith
    * @param event when the Submit button is pressed, this method is called.
    */
-
   @FXML
   void submitEmpBtnPressed(ActionEvent event) throws SQLException {
     addEmployee();
@@ -399,7 +386,6 @@ public class Controller implements Initializable {
    * Adds an Employee object into the database.
    * @author Shane Smith
    */
-
   private void addEmployee() throws SQLException {
     String name = empNameText.getText();
     String pass = empPassText.getText();
@@ -447,7 +433,6 @@ public class Controller implements Initializable {
    * Takes Employee objects from the database to be displayed.
    * @author Shane Smith
    */
-
   private void loadEmployeeList() {
     String sql = "SELECT * FROM EMPLOYEES";
     try {
@@ -477,7 +462,6 @@ public class Controller implements Initializable {
    * Setting up columns fpr the Employee tab's tableView.
    * @author Shane Smith
    */
-
   private void setupEmployeeLineTable() {
     empNameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
     empUserCol.setCellValueFactory(new PropertyValueFactory<>("Username"));
@@ -492,7 +476,6 @@ public class Controller implements Initializable {
    * @param id This is the string that gets reversed.
    * @return the string gets returned in reverse.
    */
-
   private String reverseString(String id) {
     // Paste the code for your reverseString method here.
     if (id.length() <= 1) {
@@ -506,7 +489,6 @@ public class Controller implements Initializable {
    * Displays an error when there is an unexpected input.
    * @author Shane Smith
    */
-
   private void showErrorLabel() {
     productError.setVisible(true);
     System.out.println("Please fill in all areas");
@@ -516,7 +498,6 @@ public class Controller implements Initializable {
    * Hides an error when there is an unexpected input.
    * @author Shane Smith
    */
-
   private void hideErrorLabel() {
     productError.setVisible(false);
   }
@@ -525,7 +506,6 @@ public class Controller implements Initializable {
    * Displays an error when there is an unexpected input.
    * @author Shane Smith
    */
-
   private void showProductionError() {
     productionError.setVisible(true);
   }
@@ -534,7 +514,6 @@ public class Controller implements Initializable {
    * Hides an error when there is an unexpected input.
    * @author Shane Smith
    */
-
   private void hideProductionError() {
     productionError.setVisible(false);
   }

@@ -2,7 +2,6 @@
  * Main class that runs the program and sets the stage.
  * @author Shane Smith
  */
-
 package sample;
 
 //imports

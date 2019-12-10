@@ -2,7 +2,6 @@
  * Gives template for Employee object.
  * @author Shane Smith
  */
-
 package sample;
 
 import java.util.regex.Pattern;
@@ -20,7 +19,6 @@ public class Employee {
    * @param name name of employee is used to make username and email.
    * @param password password of employee is tested if it is valid.
    */
-
   Employee(String name, String password) {
     this.name = name;
     if (checkName(name)) {
@@ -48,7 +46,6 @@ public class Employee {
    * @param email email of employee.
    * @param password password of employee.
    */
-
   Employee(String name, String username, String email, String password) {
     this.name = name;
     this.username = username;
@@ -61,7 +58,6 @@ public class Employee {
    * @author Shane Smith
    * @return returns the output string to console.
    */
-
   public String toString() {
     return "Employee Details" + "\n" + "Name : " + name + "\n" + "Username : "
         + username + "\n" + "Email : " + email + "\n" + "Initial Password : " + password;
@@ -73,7 +69,6 @@ public class Employee {
    * @param name takes the full name of the Employee and splits it
    *             into the first and last to create the username.
    */
-
   private void setUsername(String name) {
     String[] newName = name.split(" ");
     String first = newName[0];
@@ -88,8 +83,6 @@ public class Employee {
    * @param name checks if there is a space in between the first and
    *             last name of the Employee.
    */
-
-  //
   private boolean checkName(String name) {
     final String RegexNameCheck = "([a-zA-Z]+\\s[a-zA-Z]+)";
 
@@ -104,7 +97,6 @@ public class Employee {
    * @param name Employee's gets split into first and last name
    *             to create the email.
    */
-
   private void setEmail(String name) {
     String[] newName = name.split(" ");
     String first = newName[0];
@@ -120,7 +112,6 @@ public class Employee {
    * @param password Employee's password gets verified.
    * @return if the password is valid or not.
    */
-
   private boolean isValidPassword(String password) {
     final String regexPassCheck = "(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&])[a-zA-Z!@#$%&]+";
 
@@ -134,7 +125,6 @@ public class Employee {
    * @author Shane Smith
    * @return the Employee's name.
    */
-
   public String getName() {
     return name;
   }
@@ -144,7 +134,6 @@ public class Employee {
    * @author Shane Smith
    * @param name sets the name.
    */
-
   public void setName(String name) {
     this.name = name;
   }
@@ -154,9 +143,7 @@ public class Employee {
    * WARNING says can be package-private but then it breaks the Employee tableView.
    * @author Shane Smith
    * @return the Employee username.
-
    */
-
   public String getUsername() {
     return username;
   }
@@ -167,8 +154,6 @@ public class Employee {
    * @author Shane Smith
    * @return the Employee password.
    */
-
-  //
   public String getPassword() {
     return password;
   }
@@ -178,7 +163,6 @@ public class Employee {
    * @author Shane Smith
    * @param password sets the password.
    */
-
   public void setPassword(String password) {
     this.password = password;
   }
@@ -189,7 +173,6 @@ public class Employee {
    * @author Shane Smith
    * @return the Employee email
    */
-
   public String getEmail() {
     return email;
   }

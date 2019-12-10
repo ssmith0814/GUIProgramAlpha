@@ -2,7 +2,6 @@
  * Adds the different ItemTypes of products.
  * @author Shane Smith
  */
-
 package sample;
 
 public enum ItemType {
@@ -16,7 +15,6 @@ public enum ItemType {
    * @author Shane Smith
    * @param code gives access to hte abbreviations.
    */
-
   ItemType(String code) {
     this.code = code;
   }
@@ -26,7 +24,6 @@ public enum ItemType {
    * @author Shane Smith
    * @return the abbreviation of the itemType.
    */
-
   public String getType() {
     return code;
 

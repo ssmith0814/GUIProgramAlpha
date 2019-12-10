@@ -2,7 +2,6 @@
  * Gives template for product and Widget to display the product.
  * @author Shane Smith
  */
-
 package sample;
 
 public abstract class Product implements Item {
@@ -18,7 +17,6 @@ public abstract class Product implements Item {
    * @param manufacturer manufacturer of the Product.
    * @param type type of the Product.
    */
-
   Product(String name, String manufacturer, String type) {
     this.name = name;
     this.manufacturer = manufacturer;
@@ -30,7 +28,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @return the output of Product object into console.
    */
-
   public String toString() {
     return "Name: " + name + "\n" + "Manufacturer: " + manufacturer + "\n" + "Type: "
         + type;
@@ -41,7 +38,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @return type of Product.
    */
-
   public String getType() {
     return type;
   }
@@ -51,7 +47,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @param type sets the type of Product.
    */
-
   public void setType(String type) {
     this.type = type;
   }
@@ -61,7 +56,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @return manufacturer of Product
    */
-
   public String getManufacturer() {
     return manufacturer;
   }
@@ -71,7 +65,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @param manufacturer sets the manufacturer of Product.
    */
-
   public void setManufacturer(String manufacturer) {
     this.manufacturer = manufacturer;
   }
@@ -81,7 +74,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @return name of Product.
    */
-
   public String getName() {
     return name;
   }
@@ -91,7 +83,6 @@ public abstract class Product implements Item {
    * @author Shane Smith
    * @param name sets the name of Product.
    */
-
   public void setName(String name) {
     this.name = name;
   }
