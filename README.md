@@ -10,7 +10,7 @@ Management would like the production tracking to be more automated so the worker
 
 In addition to the ability to record production, the software also needs the ability to add to the product line (the catalog of products that are able to be produced).
 ## Demonstration
-![Demo](E:\Downloads\ProductionDemo.mp4)
+![Demo](<a href="https://gyazo.com/131c9f77aa9d964dd90956574abf403d"><img src="https://i.gyazo.com/131c9f77aa9d964dd90956574abf403d.gif" alt="Image from Gyazo" width="594"/></a>)
 
 ## Documentation
 [JavaDocs](https://ssmith0814.github.io/GUIProgramAlpha/res/docs/index-1.html)
