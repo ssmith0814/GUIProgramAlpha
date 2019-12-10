@@ -27,6 +27,7 @@ class ProductionRecord {
     this.productID = productID;
     this.serialNumber = serialNumber;
     this.dateProduced = dateProduced;
+
   }
 
   /***************************************************
