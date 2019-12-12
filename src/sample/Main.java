@@ -6,13 +6,9 @@ package sample;
 
 //imports
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.util.Properties;
 
 import javafx.application.Application;
 
@@ -38,14 +34,12 @@ public class Main extends Application {
    * @author Shane Smith
    * @param sql This is the sql string that gets access to the database.
    */
-  public static void initializeDB(String sql) throws IOException {
-    Properties properties = new Properties();
-    properties.load(new FileInputStream("res/properties"));
+  public static void initializeDB(String sql) {
     System.out.println(sql);
     final String jdbcDriver = "org.h2.Driver";
     final String dbUrl = "jdbc:h2:./res/PTI";
     final String user = "";
-    final String pass = properties.getProperty("password");
+    final String pass = "";
     try {
       Class.forName(jdbcDriver);
       Connection conn = DriverManager.getConnection(dbUrl, user, pass);
