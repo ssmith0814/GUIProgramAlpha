@@ -13,7 +13,7 @@ In addition to the ability to record production, the software also needs the abi
 <a href="https://gyazo.com/131c9f77aa9d964dd90956574abf403d"><img src="https://i.gyazo.com/131c9f77aa9d964dd90956574abf403d.gif" alt="Image from Gyazo" width="594"/></a>
 
 ## Documentation
-[JavaDocs](https://ssmith0814.github.io/GUIProgramAlpha/res/docs/index-1.html)
+[JavaDocs](https://ssmith0814.github.io/GUIProgramAlpha/)
 
 ## Diagrams
 ![Product Table](https://user-images.githubusercontent.com/36053356/69773920-4fb5c080-1162-11ea-8ba4-910ec7a32453.PNG)
