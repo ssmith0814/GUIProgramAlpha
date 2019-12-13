@@ -3,5 +3,6 @@
 }
 
 .root {
-    -fx-border-color: teal;
+    -fx-border-color: #00adad;
+    -fx-border-width: 5;
 }
