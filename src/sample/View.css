@@ -1,3 +1,7 @@
-#BPSF {
-    -fx-background-color: #57ff6e;
+.root {
+    -fx-background-color: #009e5c;
+}
+
+.root {
+    -fx-border-color: teal;
 }
